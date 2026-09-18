@@ -1,15 +1,19 @@
 import pytest
 
-from data.users import INVALID_USER, INVALID_PASSWORD
+from data.users import LOGIN_NEGATIVE_CASES
 from pages.login_page import LoginPage
 from config.config import BASE_URL
 
-class TestSauceDemo:
-    
+
+class TestLogin:
+
     @pytest.mark.regression
-    def test_login_invalid_credentials(self, page):
-        print("\nTest 1 — Negative — invalid credentials")
+    @pytest.mark.parametrize("username, password, expected_message", LOGIN_NEGATIVE_CASES)
+    def test_login_invalid_credentials(self, page, username, password, expected_message):
+        print(f"\nNegative login test with user: {username}")
+
         login = LoginPage(page)
+
         page.goto(BASE_URL)
-        login.login(INVALID_USER, INVALID_PASSWORD)
-        login.validate_invalid_credentials_message()
+        login.login(username, password)
+        login.validate_login_error_message(expected_message)

@@ -13,5 +13,5 @@ class LoginPage:
         self.password.fill(password)
         self.login_button.click()
 
-    def validate_invalid_credentials_message(self):
-        expect(self.login_error_message).to_contain_text("Username and password do not match any user in this service")
+    def validate_login_error_message(self, expected_message):
+        expect(self.login_error_message).to_contain_text(expected_message)
