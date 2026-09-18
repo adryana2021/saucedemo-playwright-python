@@ -4,7 +4,7 @@ STANDARD_USER = "standard_user"
 PASSWORD = "secret_sauce"
 
 INVALID_USER = "invalid_user"
-INVALID_PASSWORD = "invalid_user"
+INVALID_PASSWORD = "wrong_password"
 
 LOGIN_NEGATIVE_CASES = [
     pytest.param(

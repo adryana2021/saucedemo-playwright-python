@@ -9,8 +9,8 @@ from pages.checkout_page import CheckoutPage
 class TestCheckout:
 
     @pytest.mark.regression
-    def test_complete_purchase_multiple_products(self, page, login_user):
-        print("\nTest 2 — Positive — Complete purchase of multiple products")
+    def test_complete_purchase_multiple_products(self, logged_in_page):
+        page = logged_in_page
 
         inventory = InventoryPage(page)
         cart = CartPage(page)

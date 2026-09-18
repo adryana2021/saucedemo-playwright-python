@@ -1,1 +1,5 @@
 BASE_URL = "https://www.saucedemo.com/"
+
+EXPECT_TIMEOUT = 5_000
+ACTION_TIMEOUT = 10_000
+NAVIGATION_TIMEOUT = 15_000
