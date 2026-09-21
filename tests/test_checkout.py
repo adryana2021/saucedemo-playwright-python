@@ -9,6 +9,7 @@ from pages.checkout_page import CheckoutPage
 class TestCheckout:
 
     @pytest.mark.regression
+    @allure.title("Complete purchase of multiple products")
     def test_complete_purchase_multiple_products(self, logged_in_page):
         page = logged_in_page
 
